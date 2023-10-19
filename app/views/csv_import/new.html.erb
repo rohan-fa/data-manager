@@ -1,0 +1,12 @@
+
+<div class="jumbotron">
+
+  <h1 class= "display-4">CSV Data Import</h1>
+  <%= form_tag({ action: 'create' }, multipart: true) do %>
+    <div class="field">
+      <%= label_tag 'csv_file', 'Choose a CSV file:' %>
+      <%= file_field_tag 'csv_file' %>
+    </div>
+    <%= submit_tag 'Import', class: 'btn btn-primary btn-lg' %>
+  <% end %>
+</div>

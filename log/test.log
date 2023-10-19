@@ -1,0 +1,316 @@
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "affiliations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "affiliations_people" ("person_id" integer NOT NULL, "affiliation_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations_people" ("person_id" integer NOT NULL, "location_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "weapon" varchar, "gender" varchar, "species" varchar, "vehicle" varchar, "location" varchar, "affiliations" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231018044305)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231018044254),
+(20231018044101),
+(20231018044053),
+(20231018044013);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2023-10-19 02:15:26.218540', '2023-10-19 02:15:26.218543') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '5c205731ed5d0101ea44d9adc96a00db6ed5e3bd', '2023-10-19 02:15:26.219057', '2023-10-19 02:15:26.219058') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "affiliations";
+DELETE FROM "locations";
+DELETE FROM "people";
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:15:26.276870', '2023-10-19 02:15:26.276870');
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:15:26.276870', '2023-10-19 02:15:26.276870');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:15:26.277817', '2023-10-19 02:15:26.277817');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:15:26.277817', '2023-10-19 02:15:26.277817');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:15:26.278254', '2023-10-19 02:15:26.278254');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:15:26.278254', '2023-10-19 02:15:26.278254')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PeopleControllerTest: test_should_get_index
+-------------------------------------------
+Started GET "/people/index" for 127.0.0.1 at 2023-10-19 13:15:26 +1100
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  Rendered people/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 21971)
+  Rendered csv_import/_header.html.erb (Duration: 0.3ms | Allocations: 206)
+  Rendered layout layouts/application.html.erb (Duration: 178.8ms | Allocations: 117819)
+Completed 200 OK in 185ms (Views: 180.2ms | ActiveRecord: 0.3ms | Allocations: 122980)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+CsvImportControllerTest: test_should_import_CSV_data
+----------------------------------------------------
+Started POST "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:15:26 +1100
+Processing by CsvImportController#create as HTML
+  Parameters: {"csv_file"=>#<ActionDispatch::Http::UploadedFile:0x000000010acfd5e0 @tempfile=#<Tempfile:/var/folders/vf/ldrd3zk93wzbgy35zsf95cmr0000gn/T/RackMultipart20231019-6955-5gpmad.csv>, @content_type="text/csv", @original_filename="test20231019-6955-xlhyt0.csv", @headers="content-disposition: form-data; name=\"csv_file\"; filename=\"test20231019-6955-xlhyt0.csv\"\r\ncontent-type: text/csv\r\ncontent-length: 72\r\n">}
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 671)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CsvImportControllerTest: test_should_get_create
+-----------------------------------------------
+Started GET "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:15:26 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/csv_import/create"):
+  
+test/controllers/csv_import_controller_test.rb:10:in `block in <class:CsvImportControllerTest>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CsvImportControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "affiliations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "affiliations_people" ("person_id" integer NOT NULL, "affiliation_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations_people" ("person_id" integer NOT NULL, "location_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "weapon" varchar, "gender" varchar, "species" varchar, "vehicle" varchar, "location" varchar, "affiliations" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231018044305)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231018044254),
+(20231018044101),
+(20231018044053),
+(20231018044013);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2023-10-19 02:19:47.907583', '2023-10-19 02:19:47.907586') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '5c205731ed5d0101ea44d9adc96a00db6ed5e3bd', '2023-10-19 02:19:47.908068', '2023-10-19 02:19:47.908070') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "affiliations";
+DELETE FROM "locations";
+DELETE FROM "people";
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:19:47.947723', '2023-10-19 02:19:47.947723');
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:19:47.947723', '2023-10-19 02:19:47.947723');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:19:47.949028', '2023-10-19 02:19:47.949028');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:19:47.949028', '2023-10-19 02:19:47.949028');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:19:47.949451', '2023-10-19 02:19:47.949451');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:19:47.949451', '2023-10-19 02:19:47.949451')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PeopleControllerTest: test_should_get_index
+-------------------------------------------
+Started GET "/people/index" for 127.0.0.1 at 2023-10-19 13:19:48 +1100
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mLocation Pluck (0.1ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  Rendered people/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 21979)
+  Rendered csv_import/_header.html.erb (Duration: 0.2ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 54405)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.4ms | Allocations: 59566)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CsvImportControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+CsvImportControllerTest: test_should_import_CSV_data
+----------------------------------------------------
+Started POST "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:19:48 +1100
+Processing by CsvImportController#create as HTML
+  Parameters: {"csv_file"=>#<ActionDispatch::Http::UploadedFile:0x00000001057d76d8 @tempfile=#<Tempfile:/var/folders/vf/ldrd3zk93wzbgy35zsf95cmr0000gn/T/RackMultipart20231019-7368-77iej2.csv>, @content_type="text/csv", @original_filename="test20231019-7368-u63ibs.csv", @headers="content-disposition: form-data; name=\"csv_file\"; filename=\"test20231019-7368-u63ibs.csv\"\r\ncontent-type: text/csv\r\ncontent-length: 72\r\n">}
+Redirected to http://www.example.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 671)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CsvImportControllerTest: test_should_get_create
+-----------------------------------------------
+Started GET "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:19:48 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/csv_import/create"):
+  
+test/controllers/csv_import_controller_test.rb:10:in `block in <class:CsvImportControllerTest>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "affiliations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "affiliations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "affiliations_people" ("person_id" integer NOT NULL, "affiliation_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations_people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "locations_people" ("person_id" integer NOT NULL, "location_id" integer NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "people"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "people" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "weapon" varchar, "gender" varchar, "species" varchar, "vehicle" varchar, "location" varchar, "affiliations" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231018044305)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231018044254),
+(20231018044101),
+(20231018044053),
+(20231018044013);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2023-10-19 02:21:05.089847', '2023-10-19 02:21:05.089849') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '5c205731ed5d0101ea44d9adc96a00db6ed5e3bd', '2023-10-19 02:21:05.090320', '2023-10-19 02:21:05.090321') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "affiliations";
+DELETE FROM "locations";
+DELETE FROM "people";
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:21:05.129756', '2023-10-19 02:21:05.129756');
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:21:05.129756', '2023-10-19 02:21:05.129756');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 02:21:05.130965', '2023-10-19 02:21:05.130965');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 02:21:05.130965', '2023-10-19 02:21:05.130965');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:21:05.131406', '2023-10-19 02:21:05.131406');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 02:21:05.131406', '2023-10-19 02:21:05.131406')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------
+CsvImportControllerTest: test_should_import_CSV_data
+----------------------------------------------------
+Started POST "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:21:05 +1100
+Processing by CsvImportController#create as HTML
+  Parameters: {"csv_file"=>#<ActionDispatch::Http::UploadedFile:0x0000000107ae7c18 @tempfile=#<Tempfile:/var/folders/vf/ldrd3zk93wzbgy35zsf95cmr0000gn/T/RackMultipart20231019-7636-tiegk1.csv>, @content_type="text/csv", @original_filename="test20231019-7636-gqrfun.csv", @headers="content-disposition: form-data; name=\"csv_file\"; filename=\"test20231019-7636-gqrfun.csv\"\r\ncontent-type: text/csv\r\ncontent-length: 72\r\n">}
+Redirected to http://www.example.com/people/index
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 1565)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CsvImportControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CsvImportControllerTest: test_should_get_create
+-----------------------------------------------
+Started GET "/csv_import/create" for 127.0.0.1 at 2023-10-19 13:21:05 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/csv_import/create"):
+  
+test/controllers/csv_import_controller_test.rb:10:in `block in <class:CsvImportControllerTest>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PeopleControllerTest: test_should_get_index
+-------------------------------------------
+Started GET "/people/index" for 127.0.0.1 at 2023-10-19 13:21:05 +1100
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  Rendered people/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 21757)
+  Rendered csv_import/_header.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 54142)
+Completed 200 OK in 45ms (Views: 42.6ms | ActiveRecord: 0.3ms | Allocations: 56237)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "affiliations";
+DELETE FROM "locations";
+DELETE FROM "people";
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 03:26:09.225533', '2023-10-19 03:26:09.225533');
+INSERT INTO "affiliations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 03:26:09.225533', '2023-10-19 03:26:09.225533');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2023-10-19 03:26:09.226689', '2023-10-19 03:26:09.226689');
+INSERT INTO "locations" ("id", "name", "created_at", "updated_at") VALUES (298486374, 'MyString', '2023-10-19 03:26:09.226689', '2023-10-19 03:26:09.226689');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 03:26:09.227349', '2023-10-19 03:26:09.227349');
+INSERT INTO "people" ("id", "first_name", "last_name", "weapon", "vehicle", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyString', 'MyString', 'MyString', '2023-10-19 03:26:09.227349', '2023-10-19 03:26:09.227349')[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------------------------
+PersonTest: test_format_name_to_title_case_should_return_name_in_title_case
+---------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+CsvImportControllerTest: test_should_get_create
+-----------------------------------------------
+Started GET "/csv_import/create" for 127.0.0.1 at 2023-10-19 14:26:09 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/csv_import/create"):
+  
+test/controllers/csv_import_controller_test.rb:10:in `block in <class:CsvImportControllerTest>'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+CsvImportControllerTest: test_should_get_new
+--------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+PeopleControllerTest: test_should_get_index
+-------------------------------------------
+Started GET "/people/index" for 127.0.0.1 at 2023-10-19 14:26:09 +1100
+Processing by PeopleController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering people/index.html.erb within layouts/application
+  [1m[36mPerson Load (0.1ms)[0m  [1m[34mSELECT "people".* FROM "people" LIMIT ? OFFSET ?[0m  [["LIMIT", 10], ["OFFSET", 0]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 298486374]]
+  [1m[36mLocation Pluck (0.0ms)[0m  [1m[34mSELECT "locations"."name" FROM "locations" INNER JOIN "locations_people" ON "locations"."id" = "locations_people"."location_id" WHERE "locations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  [1m[36mAffiliation Pluck (0.0ms)[0m  [1m[34mSELECT "affiliations"."name" FROM "affiliations" INNER JOIN "affiliations_people" ON "affiliations"."id" = "affiliations_people"."affiliation_id" WHERE "affiliations_people"."person_id" = ?[0m  [["person_id", 980190962]]
+  Rendered people/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 7336)
+  Rendered csv_import/_header.html.erb (Duration: 0.2ms | Allocations: 196)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 39869)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 0.3ms | Allocations: 42745)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
